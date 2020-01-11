@@ -48,46 +48,58 @@ public class ArrayFunctions {
      * @return {@code true} if the value was deleted; {@code false} if the value was not present.
      */
     public boolean deleteValue(int[] array, int value) {
-        if (searchValue(array, value) != -1) {
 
+        boolean response = false;
+        int index = searchValue(array, value);
+        if (index != -1) {
+            for (int i = index; i <= array.length; i++) {
+                array[i - 1] = array[i];
+
+
+            }
+            insertValue(array, value:0)
+            response = true;
 
         }
-        return false;
-    }
 
-    /**
-     * This method is the overloaded form of the {@code deleteValue()} method which
-     * lets the user to delete a value based on an index of the array.
-     */
-    public boolean deleteValue(int index, int[] array) {
-        return false;
-    }
+        /**
+         * This method is the overloaded form of the {@code deleteValue()} method which
+         * lets the user to delete a value based on an index of the array.
+         */
+        public boolean deleteValue ( int index, int[] array){
 
-    /**
-     * This method will search for an integer value inside an integer array.
-     */
-    public int searchValue(int[] array, int value) {
-        int response = -1;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == value) {
-                response = i;
-                break;
+
+            return false;
+        }
+
+        /**
+         * This method will search for an integer value inside an integer array.
+         */
+        ( int[] array, int value){
+            int response = -1;
+            for (int index = 0; index < array.length; index++) {
+
+
+                if (array[index] == value) {
+                    response = index;
+                    break;
+                }
             }
         }
         return response;
+
+
+        /*
+         * This method will sort the values of the integer array in an increasing order.
+         * */
+        public void sortValues ( int[] array){
+
+        }
+
+        /*
+         * This method will traverse the array and print all the values.
+         * */
+        public void printArrayValues ( int[] array){
+
+        }
     }
-
-    /*
-     * This method will sort the values of the integer array in an increasing order.
-     * */
-    public void sortValues(int[] array) {
-
-    }
-
-    /*
-     * This method will traverse the array and print all the values.
-     * */
-    public void printArrayValues(int[] array) {
-
-    }
-}
